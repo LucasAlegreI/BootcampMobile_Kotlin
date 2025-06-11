@@ -30,6 +30,7 @@ class Reloj (horas: Int=12,minutos: Int=0,segundos: Int=0) {
         return Triple((newSegundos % 86400)/3600,(newSegundos % 86400)%3600/60,(newSegundos % 86400)%3600%60)
     }
     fun relojToSeconds(reloj:Reloj):Int=reloj.segundos+(reloj.minutos*60)+(reloj.horas*3600)
+
     fun tick(){
         val triple=setReloj(relojToSeconds(this)+1)
         horas=triple.first
